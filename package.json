@@ -1,0 +1,38 @@
+{
+  "name": "lex-chatbot-ui-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity": "^3.731.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.731.0",
+    "@aws-sdk/client-lex-runtime-v2": "^3.730.0",
+    "@aws-sdk/client-sts": "^3.730.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.731.0",
+    "@aws-sdk/credential-providers": "^3.731.0",
+    "aws-sdk": "^2.1692.0",
+    "oidc-client-ts": "^3.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-oidc-context": "^3.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.5"
+  }
+}

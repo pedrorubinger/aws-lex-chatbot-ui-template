@@ -16,6 +16,8 @@
     "@aws-sdk/client-sts": "^3.730.0",
     "@aws-sdk/credential-provider-cognito-identity": "^3.731.0",
     "@aws-sdk/credential-providers": "^3.731.0",
+    "@chakra-ui/react": "^3.4.0",
+    "@emotion/react": "^11.14.0",
     "aws-sdk": "^2.1692.0",
     "oidc-client-ts": "^3.1.0",
     "react": "^18.3.1",

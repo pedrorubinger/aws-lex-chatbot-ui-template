@@ -127,8 +127,18 @@ export const Chat: React.FC<IProps> = () => {
           placeholder="Type a message..."
           onChange={(e) => setInput(e.target.value)}
           value={input}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSend();
+            }
+          }}
+          disabled={isLoading}
         />
-        <Button variant="plain" onClick={handleSend} disabled={!input}>
+        <Button
+          variant="plain"
+          onClick={handleSend}
+          disabled={!input || isLoading}
+        >
           Send
         </Button>
       </Box>

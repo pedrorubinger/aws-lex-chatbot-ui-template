@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Box, Button, Container, Input, Text } from "@chakra-ui/react";
 
-import { useAwsRole } from "../hooks/useAwsRole";
-import { useChatMessages } from "../hooks/useChatMessages";
+import { useAwsRole } from "@/hooks/useAwsRole";
+import { useChatMessages } from "@/hooks/useChatMessages";
 import { ISenderType } from "@/interfaces/chat";
 
 interface IProps {}
@@ -24,8 +24,10 @@ export const Chat: React.FC<IProps> = () => {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      marginTop={10}
+      width={600}
     >
-      <img src={"src/assets/logo.png"} width={120} height={20} />
+      <img src={"src/assets/logo.png"} width={130} height={30} />
       <Box
         borderRadius={6}
         backgroundColor="#EDF0FA"
@@ -115,7 +117,7 @@ export const Chat: React.FC<IProps> = () => {
       </Box>
 
       <Box
-        width="100%"
+        width={500}
         display="flex"
         flexDirection="column"
         marginTop={5}

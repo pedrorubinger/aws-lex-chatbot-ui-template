@@ -1,8 +1,16 @@
-# React + Vite
+## ChatBot Demo - AWS Lex + React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Steps to Run the Project
 
-Currently, two official plugins are available:
+1. **Install Dependencies**  
+   Run the following command to install the required `node_modules`:
+   ```bash
+   npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. **Configure Environment Variables**
+Ensure the `.env` file is properly filled with the necessary configuration values.
+
+3. **Configure Environment Variables**
+Ensure the .env file is properly filled with the necessary configuration values.
+    ```bash
+    npm run dev

@@ -42,7 +42,7 @@ export const Chat: React.FC<IProps> = () => {
       >
         {!messages.length && (
           <Text color="blue.800" textAlign="center">
-            Send a message to start using the ChatBot.
+            Send a message to start using the Chat Bot.
           </Text>
         )}
         {messages.map((msg, index) => {

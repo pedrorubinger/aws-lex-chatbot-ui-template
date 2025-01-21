@@ -1,4 +1,4 @@
-## ChatBot Demo - AWS Lex + React.js
+## Chat Bot Demo - AWS Lex + React.js
 
 ### Steps to Run the Project
 

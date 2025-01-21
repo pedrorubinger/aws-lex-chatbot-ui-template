@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 } from "uuid";
 import {
   LexRuntimeV2Client,
   RecognizeTextCommand,
@@ -7,14 +8,25 @@ import {
 import { IChatMessage, ISenderType } from "../interfaces/chat";
 import { IRoleData } from "../interfaces/aws";
 
+const errorMessage = "Sorry, I didn't understand. Could you please try again?";
+
 export const useChatMessages = (role: IRoleData | null) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<IChatMessage[]>([]);
   const [input, setInput] = useState("");
 
   const handleSend = async () => {
     if (!input.trim() || !role) return;
 
-    const userMessage: IChatMessage = { sender: ISenderType.USER, text: input };
+    setInput("");
+    setIsLoading(true);
+
+    const userMessage: IChatMessage = {
+      id: v4(),
+      sender: ISenderType.USER,
+      text: input,
+      timestamp: new Date(),
+    };
     setMessages((prev) => [...prev, userMessage]);
 
     try {
@@ -39,10 +51,10 @@ export const useChatMessages = (role: IRoleData | null) => {
       const response = await lexClient.send(command);
 
       const botMessage: IChatMessage = {
+        id: v4(),
         sender: ISenderType.BOT,
-        text:
-          response.messages?.[0]?.content ||
-          "Error communicating with the bot.",
+        text: response.messages?.[0]?.content || errorMessage,
+        timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
@@ -51,16 +63,19 @@ export const useChatMessages = (role: IRoleData | null) => {
       setMessages((prev) => [
         ...prev,
         {
+          id: v4(),
+          text: errorMessage,
           sender: ISenderType.BOT,
-          text: "Sorry. Error communicating with the bot.",
+          timestamp: new Date(),
         },
       ]);
+    } finally {
+      setIsLoading(false);
     }
-
-    setInput("");
   };
 
   return {
+    isLoading,
     messages,
     input,
     setInput,

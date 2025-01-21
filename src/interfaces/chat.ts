@@ -4,6 +4,8 @@ export enum ISenderType {
 }
 
 export interface IChatMessage {
+  id: string;
   text: string;
   sender: ISenderType;
+  timestamp: Date;
 }
